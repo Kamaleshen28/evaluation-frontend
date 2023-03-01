@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fullEventDetailCard should render fullEventDetailCard correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="full-card"
+  >
+    <div
+      class="full-card-wrapper"
+    >
+      <div
+        class="full-card-top-section"
+      >
+        <img
+          alt=""
+          class="full-card-top-section-image"
+          src="https://i.ibb.co/3zbdvWX/battle-of-bands.jpg"
+        />
+      </div>
+      <div
+        class="full-card-middle-section"
+      >
+        <span
+          class="full-card-event-name"
+        >
+          Battle of the Bands
+        </span>
+        <span
+          class="full-card-event-description"
+        >
+          Get ready for Battle of the Bands, where the hottest up-and-coming rock groups will compete for the ultimate prize. With heart-pumping beats and electrifying performances, you won't want to miss this adrenaline-fueled event. Each band will bring their A-game, leaving everything on the stage for the chance to be crowned champion. Don't miss out on the most unforgettable rock competition of the year!
+        </span>
+        <span
+          class="full-card-evnt-venue"
+        >
+          <span
+            class="venue-title"
+          >
+            VENUE:
+          </span>
+           All Stars Arena, Las Vegas, NV, USA
+        </span>
+        <span
+          class="full-card-evnt-venue"
+        >
+          <span
+            class="date-title"
+          >
+            DATE:
+          </span>
+           2023-03-01T05:00:00.000Z
+        </span>
+      </div>
+      <div
+        class="full-card-bottom-section"
+      >
+        <div
+          class="full-card-bottom-upper"
+        >
+          <div
+            class="full-card-bottom-upper-left"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-circle-check full-tick-icon"
+              data-icon="circle-check"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+                fill="currentColor"
+              />
+            </svg>
+            <span
+              class="full-registration-status-text"
+            >
+              REGISTERED
+            </span>
+          </div>
+          <div
+            class="full-card-bottom-upper-right"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-bookmark "
+              data-icon="bookmark"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 384 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="full-card-bottom-lower"
+        >
+          <button
+            class="full-card-register-button"
+          >
+            UNREGISTER
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

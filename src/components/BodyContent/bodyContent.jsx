@@ -12,7 +12,6 @@ export default function BodyContent() {
       filter: ''
     });
 
-  // console.log('IN BODYCONTEXT', formData);
 
   // ---------------
   const [searchInput, setSearchInput] = useState('');
@@ -20,7 +19,6 @@ export default function BodyContent() {
 
 
   const [eventData, setEventData] = useState([]);
-  // const navigate = useNavigate();
 
   const fetchData = async () => {
     const data = await axios.get('http://localhost:8000/api/events', {
@@ -74,7 +72,6 @@ export default function BodyContent() {
   //-----------------------------
 
   const upadteEventDataStateForRegisteration = (id, updatedValue) => {
-    // const upadtedData =
     setEventData(eventData.map(eachEventData => {
       if (eachEventData.id === id) {
         return { ...eachEventData, isRegistered: updatedValue };
@@ -97,7 +94,7 @@ export default function BodyContent() {
     const response = await axios(config);
     upadteEventDataStateForRegisteration(id, updatedValue);
 
-    console.log('BOOOOOOKMARK: ,', response);
+    console.log('resposne: ', response);
 
   };
   // --------------------------------

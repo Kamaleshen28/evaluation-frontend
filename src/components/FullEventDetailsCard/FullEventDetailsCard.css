@@ -36,13 +36,6 @@
   margin-bottom: 20px;
 }
 
-.full-card-evnt-venue {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
-}
-
 .full-card-bottom-section {
   display: flex;
   flex-direction: column;

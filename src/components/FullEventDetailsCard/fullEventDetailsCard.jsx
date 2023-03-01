@@ -64,7 +64,7 @@ FullEventDetailsCard.propTypes = {
   handleRegisterButtonClick: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
 
-  datetime: PropTypes.instanceOf(Date)
+  datetime: PropTypes.string.isRequired
 };
 
 

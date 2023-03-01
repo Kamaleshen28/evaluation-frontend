@@ -27,8 +27,8 @@ export default function Card(props) {
         <div className="card-middle-section" onClick={() => handleNavigation(props.id)}>
           <span className="card-event-name">{props.name}</span>
           <span className="card-event-description">{props.description}</span>
-          <span className="full-card-evnt-venue"><span className="venue-title">VENUE:</span> {props.venue}</span>
-          <span className="full-card-evnt-venue"><span className="date-title">DATE:</span> {props.datetime}</span>
+          <span className="card-evnt-venue"><span className="venue-title">VENUE:</span> {props.venue}</span>
+          <span className="card-evnt-venue"><span className="date-title">DATE:</span> {props.datetime}</span>
         </div>
 
         <div className="card-bottom-section">
@@ -72,7 +72,7 @@ Card.propTypes = {
   handleRegisterButtonClick: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
 
-  datetime: PropTypes.instanceOf(Date)
+  datetime: PropTypes.string.isRequired
 };
 
 
