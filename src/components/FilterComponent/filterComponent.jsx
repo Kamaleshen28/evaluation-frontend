@@ -5,25 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 
-export default function FilterComponent({ searchInput, handleSearchBoxChange }) {
-
-
-  const [formData, setFormData] = React.useState(
-    {
-      filter: '',
-    });
-
-  console.log(formData);
-
-  function handleChange(event) {
-    const { name, value, type, checked } = event.target;
-    setFormData(prevFormData => {
-      return {
-        ...prevFormData,
-        [name]: type === 'checkbox' ? checked : value
-      };
-    });
-  }
+export default function FilterComponent({ searchInput, handleSearchBoxChange, handleRadioButtonChange, filter }) {
 
   return (
     <div className='body-header'>
@@ -40,8 +22,8 @@ export default function FilterComponent({ searchInput, handleSearchBoxChange }) 
           id="ALL"
           name="filter"
           value="ALL"
-          checked={formData.employment === 'ALL'}
-          onChange={handleChange}
+          checked={filter === 'ALL'}
+          onChange={handleRadioButtonChange}
         />
         <label htmlFor="ALL">ALL</label>
         <br />
@@ -51,8 +33,8 @@ export default function FilterComponent({ searchInput, handleSearchBoxChange }) 
           id="BOOKMARKED"
           name="filter"
           value="BOOKMARKED"
-          checked={formData.employment === 'BOOKMARKED'}
-          onChange={handleChange}
+          checked={filter === 'BOOKMARKED'}
+          onChange={handleRadioButtonChange}
         />
         <label htmlFor="BOOKMARKED">BOOKMARKED</label>
         <br />
@@ -62,8 +44,8 @@ export default function FilterComponent({ searchInput, handleSearchBoxChange }) 
           id="REGISTERED"
           name="filter"
           value="REGISTERED"
-          checked={formData.employment === 'REGISTERED'}
-          onChange={handleChange}
+          checked={filter === 'REGISTERED'}
+          onChange={handleRadioButtonChange}
         />
         <label htmlFor="REGISTERED">REGISTERED</label>
         <br />
@@ -73,8 +55,8 @@ export default function FilterComponent({ searchInput, handleSearchBoxChange }) 
           id="SEATS AVAILABLE"
           name="filter"
           value="SEATS AVAILABLE"
-          checked={formData.employment === 'SEATS AVAILABLE'}
-          onChange={handleChange}
+          checked={filter === 'SEATS AVAILABLE'}
+          onChange={handleRadioButtonChange}
         />
         <label htmlFor="SEATS AVAILABLE">SEATS AVAILABLE</label>
         <br />
@@ -103,5 +85,7 @@ export default function FilterComponent({ searchInput, handleSearchBoxChange }) 
 
 FilterComponent.propTypes = {
   searchInput: proptypes.string,
-  handleSearchBoxChange: proptypes.func
+  filter: proptypes.string,
+  handleSearchBoxChange: proptypes.func,
+  handleRadioButtonChange: proptypes.func
 };

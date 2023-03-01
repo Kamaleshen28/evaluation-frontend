@@ -7,6 +7,14 @@ import FilterComponent from '../FilterComponent/filterComponent';
 
 export default function BodyContent() {
 
+  const [formData, setFormData] = React.useState(
+    {
+      filter: ''
+    });
+
+  // console.log('IN BODYCONTEXT', formData);
+
+  // ---------------
   const [searchInput, setSearchInput] = useState('');
   const [storedData, setStoredData] = useState([]);
 
@@ -27,25 +35,29 @@ export default function BodyContent() {
 
     setEventData(data.data);
     setStoredData(data.data);
-
+    console.log('fetchOVER ');
 
   };
   useEffect(() => {
     fetchData();
   }, []);
 
-  const upadteEventDataState = (id, updatedValue) => {
-    setEventData(eventData.map(eachEventData => {
-      if (eachEventData.id === id) {
-        return { ...eachEventData, isBookmarked: updatedValue };
-      } else {
-        return { ...eachEventData };
-      }
-    }));
+  const upadteEventDataState = () => {
+    if (formData.filter === 'ALL') {
+      setEventData(storedData);
+    } else if (formData.filter === 'BOOKMARKED') {
+      setEventData(filterBookmakedData());
+    } else if (formData.filter === 'REGISTERED') {
+      console.log('Its REgu');
+      setEventData(filterRegisteredEvent());
+    } else if (formData.filter === 'SEATS AVAILABLE') {
+      console.log('Its seat');
+      setEventData(filterSeatsAvailableEvent());
+    }
   };
 
   const handleOnClickBookmark = async (id, updatedValue) => {
-    console.log('UP: ', updatedValue);
+    console.log('UPbooooo: ', updatedValue);
     const data = { 'isBookmarked': updatedValue };
     const config = {
       method: 'patch',
@@ -54,13 +66,18 @@ export default function BodyContent() {
       data: data
     };
     const response = await axios(config);
-    upadteEventDataState(id, updatedValue);
+    console.log('response: ', response);
+    await fetchData();
+    console.log('FetchDONE: ');
+    upadteEventDataState();
 
     console.log('BOOOOOOKMARK: ,', response);
 
   };
+  //-----------------------------
 
   const upadteEventDataStateForRegisteration = (id, updatedValue) => {
+    // const upadtedData =
     setEventData(eventData.map(eachEventData => {
       if (eachEventData.id === id) {
         return { ...eachEventData, isRegistered: updatedValue };
@@ -91,11 +108,61 @@ export default function BodyContent() {
   const handleSearchBoxChange = (event) => {
     setSearchInput(event.target.value);
     if (event.target.value.trim() === '') {
-      setEventData(storedData);
+      upadteEventDataState();
     } else {
       const filteredFoodData = storedData.filter(eachFood => ((eachFood.name).startsWith(event.target.value.trim())));
       setEventData(filteredFoodData);
     }
+  };
+
+  const filterBookmakedData = () => {
+    return storedData.filter(eachEventData => {
+      if (eachEventData.isBookmarked) {
+        return eachEventData;
+      }
+    });
+  };
+  const filterRegisteredEvent = () => {
+    return storedData.filter(eachEventData => {
+      if (eachEventData.isRegistered) {
+        return eachEventData;
+      }
+    });
+  };
+  const filterSeatsAvailableEvent = () => {
+    return storedData.filter(eachEventData => {
+      if (eachEventData.areSeatsAvailable) {
+        return eachEventData;
+      }
+    });
+  };
+  //---------------------------------
+  const handleRadioButtonChange = (event) => {
+    const { name, value, type, checked } = event.target;
+    // console.log('VALUE: ', value);
+    if (value === 'ALL') {
+      setEventData(storedData);
+    } else if (value === 'BOOKMARKED') {
+      console.log('Its boooooooo');
+      setEventData(filterBookmakedData());
+    } else if (value === 'REGISTERED') {
+      console.log('Its REgu');
+      setEventData(filterRegisteredEvent());
+    } else if (value === 'SEATS AVAILABLE') {
+      console.log('Its seat');
+      setEventData(filterSeatsAvailableEvent());
+    }
+
+
+    setFormData(prevFormData => {
+      return {
+        ...prevFormData,
+        [name]: type === 'checkbox' ? checked : value
+      };
+    });
+
+
+
   };
 
   const renderAllEvents = eventData.map(eachEventData => {
@@ -114,6 +181,8 @@ export default function BodyContent() {
           <FilterComponent
             searchInput={searchInput}
             handleSearchBoxChange={handleSearchBoxChange}
+            handleRadioButtonChange={handleRadioButtonChange}
+            filter={formData.filter}
           />
         </div>
         <div className="all-event-card-container">
