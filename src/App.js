@@ -12,8 +12,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/:eventId' element={<EventDetailPage />} />
-          {/* <Route path={GENRE_ROUTE} element={<Genre />} /> */}
-
         </Routes>
       </BrowserRouter>
     </div>

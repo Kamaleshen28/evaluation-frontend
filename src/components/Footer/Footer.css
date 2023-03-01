@@ -1,0 +1,40 @@
+.footer-wrapper {
+  position: absolute;
+  bottom: 0;
+  background-color: blue;
+  width: 100%;
+  color: white;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 240px 0 240px;
+  font-weight: bold;
+}
+
+.theme-text {
+  margin-right: 20px;
+}
+
+.color-1 {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.color-2 {
+  width: 50px;
+  height: 50px;
+  background-color: blueviolet;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.color-3 {
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+  border-radius: 5px;
+  margin-right: 10px;
+}
