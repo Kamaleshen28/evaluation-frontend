@@ -1,6 +1,5 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import BodyContent from '../bodyContent';
 import axios from 'axios';
 
