@@ -4,6 +4,7 @@ import FullEventDetailsCard from '../../components/FullEventDetailsCard/fullEven
 import Header from '../../components/Header/header';
 import axios from 'axios';
 import './EventDetailPage.css';
+import Footer from '../../components/Footer/footer';
 
 export default function EventDetailPage() {
 
@@ -104,6 +105,7 @@ export default function EventDetailPage() {
       <div className="event-detail-page-card-container">
         {renderSingleCard}
       </div>
+      <Footer />
     </div>
   );
 }
