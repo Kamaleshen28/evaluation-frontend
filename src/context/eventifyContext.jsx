@@ -4,7 +4,7 @@ export const eventifyContext = createContext({});
 
 // eslint-disable-next-line react/prop-types
 export const RecordShelfContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState([]);
+  const [theme, setTheme] = useState();
 
   return (<eventifyContext.Provider value={{ theme, setTheme }}>
     {children}

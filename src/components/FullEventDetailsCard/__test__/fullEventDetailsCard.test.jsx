@@ -1,6 +1,5 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import FullEventDetailsCard from '../fullEventDetailsCard';
 
 jest.mock('react-router-dom');
@@ -29,17 +28,7 @@ describe('fullEventDetailCard', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  // it('should call naviagte to /1 when card is clicked', async () => {
-  //   const navigateFn = jest.fn();
-  //   useNavigate.mockReturnValue(navigateFn);
-  //   render(<Card />);
-  //   // await waitFor(() => {
-  //   //   expect(screen.getAllByText('Battle of the Bands')).toBeTruthy();
-  //   // });
-  //   const clickableArea = screen.getByTestId('clickable-area');
-  //   fireEvent.click(clickableArea);
-  //   expect(navigateFn).toHaveBeenCalled();
-  // });
+
 });
 
 

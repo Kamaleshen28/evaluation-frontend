@@ -1,16 +1,16 @@
-.footer-wrapper {
-  position: absolute;
-  bottom: 0;
-  background-color: blue;
-  width: 100%;
-  color: white;
-  height: 80px;
+.footer {
   display: flex;
-  align-items: center;
-  /* justify-content: space-between; */
   padding: 0 240px 0 240px;
+  background-color: blue;
+  height: 90px;
+  align-items: center;
   font-weight: bold;
+  color: white;
+
+
 }
+
+
 
 .theme-text {
   margin-right: 20px;
@@ -52,6 +52,7 @@
 
 .save-theme-button-container {
   display: flex;
+  align-items: center;
   margin-left: 220px;
 }
 
@@ -62,6 +63,4 @@
   color: blue;
   border: none;
   border-radius: 7px;
-
-
 }
