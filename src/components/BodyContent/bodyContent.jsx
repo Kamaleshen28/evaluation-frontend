@@ -13,6 +13,12 @@ export default function BodyContent() {
       headers: {
       }
     });
+
+    (data.data).sort(function (a, b) {
+
+      return new Date(a.datetime).getTime() - new Date(b.datetime).getTime();
+    });
+
     console.log('data HERE:', data.data);
     setEventData(data.data);
 
