@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react';
 import './BodyContent.css';
 import axios from 'axios';
 import Card from '../Card/card';
+import FilterComponent from '../FilterComponent/filterComponent';
 
 
 export default function BodyContent() {
+
+  const [searchInput, setSearchInput] = useState('');
+  const [storedData, setStoredData] = useState([]);
+
+
   const [eventData, setEventData] = useState([]);
   // const navigate = useNavigate();
 
@@ -20,6 +26,8 @@ export default function BodyContent() {
     });
 
     setEventData(data.data);
+    setStoredData(data.data);
+
 
   };
   useEffect(() => {
@@ -78,6 +86,17 @@ export default function BodyContent() {
     console.log('BOOOOOOKMARK: ,', response);
 
   };
+  // --------------------------------
+
+  const handleSearchBoxChange = (event) => {
+    setSearchInput(event.target.value);
+    if (event.target.value.trim() === '') {
+      setEventData(storedData);
+    } else {
+      const filteredFoodData = storedData.filter(eachFood => ((eachFood.name).startsWith(event.target.value.trim())));
+      setEventData(filteredFoodData);
+    }
+  };
 
   const renderAllEvents = eventData.map(eachEventData => {
     return (< Card
@@ -91,6 +110,12 @@ export default function BodyContent() {
   return (
     <div className="body-content">
       <div className="body-content-wrapper">
+        <div className="filter-component-wrapper">
+          <FilterComponent
+            searchInput={searchInput}
+            handleSearchBoxChange={handleSearchBoxChange}
+          />
+        </div>
         <div className="all-event-card-container">
           {renderAllEvents}
 
