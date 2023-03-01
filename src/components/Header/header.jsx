@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <div className="header">
       <div className="header-wrapper">
-        <span className="header-title" onClick={handleNavigation}>EVENTIFY</span>
+        <span className="header-title" onClick={handleNavigation} data-testid="evenity-text">EVENTIFY</span>
       </div>
     </div>
   );

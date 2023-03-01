@@ -140,13 +140,10 @@ export default function BodyContent() {
     if (value === 'ALL') {
       setEventData(storedData);
     } else if (value === 'BOOKMARKED') {
-      console.log('Its boooooooo');
       setEventData(filterBookmakedData());
     } else if (value === 'REGISTERED') {
-      console.log('Its REgu');
       setEventData(filterRegisteredEvent());
     } else if (value === 'SEATS AVAILABLE') {
-      console.log('Its seat');
       setEventData(filterSeatsAvailableEvent());
     }
 

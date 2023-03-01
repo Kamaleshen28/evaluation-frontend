@@ -1,6 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Card from '../card';
 
