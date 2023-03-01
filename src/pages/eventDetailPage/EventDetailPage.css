@@ -1,0 +1,16 @@
+.event-detail-page {
+  min-height: 100vh;
+}
+
+.event-detail-page-card-container {
+  display: flex;
+  justify-content: center;
+  padding: 100px 240px 100px 240px;
+  min-height: 100%;
+  /* min-height: calc(100vh - 100px); */
+  /* min-height: (100vh - 100px); */
+}
+
+/* .header-event-detail-page-wrapper {
+  min-height: 100vh;
+} */

@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import './BodyContent.css';
+import { useParams } from 'react-router-dom';
+import FullEventDetailsCard from '../../components/FullEventDetailsCard/fullEventDetailsCard';
+import Header from '../../components/Header/header';
 import axios from 'axios';
-import Card from '../Card/card';
+import './EventDetailPage.css';
+
+export default function EventDetailPage() {
 
 
-export default function BodyContent() {
   const [eventData, setEventData] = useState([]);
-  // const navigate = useNavigate();
+  const { eventId } = useParams();
 
   const fetchData = async () => {
     const data = await axios.get('http://localhost:8000/api/events', {
@@ -29,6 +32,7 @@ export default function BodyContent() {
   const upadteEventDataState = (id, updatedValue) => {
     setEventData(eventData.map(eachEventData => {
       if (eachEventData.id === id) {
+        console.log('IDHETRE: ', id, updatedValue);
         return { ...eachEventData, isBookmarked: updatedValue };
       } else {
         return { ...eachEventData };
@@ -79,22 +83,26 @@ export default function BodyContent() {
 
   };
 
-  const renderAllEvents = eventData.map(eachEventData => {
-    return (< Card
-      key={eachEventData.id}
-      {...eachEventData}
-      handleOnClickBookmark={handleOnClickBookmark}
-      handleRegisterButtonClick={handleRegisterButtonClick}
-    />);
+  const renderSingleCard = eventData.map(eachEventData => {
+    if (Number(eachEventData.id) === Number(eventId)) {
+      return (< FullEventDetailsCard
+        key={eachEventData.id}
+        {...eachEventData}
+        handleOnClickBookmark={handleOnClickBookmark}
+        handleRegisterButtonClick={handleRegisterButtonClick}
+      />);
+
+    }
   });
 
   return (
-    <div className="body-content">
-      <div className="body-content-wrapper">
-        <div className="all-event-card-container">
-          {renderAllEvents}
+    <div className="event-detail-page">
+      <div className="header-event-detail-page-wrapper">
+        <Header />
 
-        </div>
+      </div>
+      <div className="event-detail-page-card-container">
+        {renderSingleCard}
       </div>
     </div>
   );
