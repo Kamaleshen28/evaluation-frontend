@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`card should render header correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="footer"
+  >
+    <div
+      class="theme-color-container"
+    >
+      <span
+        class="theme-text"
+      >
+        THEMES
+      </span>
+      <span
+        class="color-1"
+      />
+      <span
+        class="color-2"
+      />
+      <span
+        class="color-3"
+      />
+    </div>
+    <div
+      class="save-theme-button-container"
+    >
+      <button
+        class="save-theme-button"
+      >
+        SAVE THEME
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
