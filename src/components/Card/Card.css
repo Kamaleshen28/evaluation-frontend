@@ -1,0 +1,70 @@
+.card-wrapper {
+  width: 300px;
+  height: 460px;
+  background-color: blue;
+  margin-top: 20px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-top-section-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+}
+
+.card-middle-section {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-event-name {
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.card-event-description {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.card-evnt-venue {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.card-bottom-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 20px 20px;
+}
+
+.card-bottom-upper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card-register-button {
+  font-size: 16px;
+  font-weight: bold;
+  width: 120px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+}

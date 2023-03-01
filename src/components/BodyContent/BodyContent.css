@@ -1,0 +1,9 @@
+.body-content-wrapper {
+  padding: 100px 240px 100px 240px;
+}
+
+.all-event-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px
+}
