@@ -21,7 +21,7 @@ export default function Card(props) {
     <div className="card" >
       <div className="card-wrapper">
         <div className="card-top-section">
-          <img src={props.imgUrl} alt="" className="card-top-section-image" onClick={() => handleNavigation(props.id)} />
+          <img src={props.imgUrl} alt="" className="card-top-section-image" onClick={() => handleNavigation(props.id)} data-testid='clickable-area' />
         </div>
 
         <div className="card-middle-section" onClick={() => handleNavigation(props.id)}>
