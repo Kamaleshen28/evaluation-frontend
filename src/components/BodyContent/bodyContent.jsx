@@ -70,9 +70,6 @@ export default function BodyContent() {
     await fetchData();
     console.log('FetchDONE: ');
     upadteEventDataState();
-
-    console.log('BOOOOOOKMARK: ,', response);
-
   };
   //-----------------------------
 

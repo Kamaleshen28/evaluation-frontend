@@ -65,15 +65,17 @@ export default function FilterComponent({ searchInput, handleSearchBoxChange, ha
 
 
       </form>
+      <div className="searchbar-lens">
+        <input
+          className='search-box'
+          placeholder='EVENT NAME'
+          value={searchInput}
+          name='input'
+          onChange={handleSearchBoxChange}
+        ></input>
+        <FontAwesomeIcon icon={faMagnifyingGlass} className='search-button' />
+      </div>
 
-      <input
-        className='search-box'
-        placeholder='EVENT NAME'
-        value={searchInput}
-        name='input'
-        onChange={handleSearchBoxChange}
-      ></input>
-      <FontAwesomeIcon icon={faMagnifyingGlass} className='search-button' />
 
 
 
