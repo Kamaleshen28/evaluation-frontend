@@ -11,6 +11,21 @@
   /* min-height: (100vh - 100px); */
 }
 
+@media only screen and (max-width: 1000px) {  
+  .event-detail-page-card-container { 
+    padding: 100px 40px 100px 40px;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 500px) {  
+  .event-detail-page-card-container { 
+    padding: 100px 10px 100px 10px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 /* .header-event-detail-page-wrapper {
   min-height: 100vh;
 } */

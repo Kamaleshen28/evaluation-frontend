@@ -33,7 +33,6 @@ export default function BodyContent() {
 
     setEventData(data.data);
     setStoredData(data.data);
-    console.log('fetchOVER ');
 
   };
   useEffect(() => {

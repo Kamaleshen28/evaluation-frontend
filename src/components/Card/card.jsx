@@ -1,15 +1,26 @@
-import React from 'react';
+/* eslint-disable indent */
+import React, { useContext } from 'react';
 import './Card.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
-import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark as faBookmarkSolid } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark as faBookmarkRegular } from '@fortawesome/free-regular-svg-icons';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import { eventifyContext } from '../../context/eventifyContext';
 
 export default function Card(props) {
+
+  const { theme } = useContext(eventifyContext);
+  let colorClass = '';
+  switch (theme) {
+    case '#0000FF': colorClass = 'card-wrapper blue-theme'; break;
+    case '#000000': colorClass = 'card-wrapper black-theme'; break;
+    case '#800080': colorClass = 'card-wrapper violet-theme'; break;
+    case '#9B9999': colorClass = 'card-wrapper gray-theme';
+  }
 
   const navigate = useNavigate();
 
@@ -19,7 +30,7 @@ export default function Card(props) {
 
   return (
     <div className="card" >
-      <div className="card-wrapper">
+      <div className={colorClass}>
         <div className="card-top-section">
           <img src={props.imgUrl} alt="" className="card-top-section-image" onClick={() => handleNavigation(props.id)} data-testid='clickable-area' />
         </div>
@@ -41,8 +52,8 @@ export default function Card(props) {
               {!props.areSeatsAvailable && <span className="registration-status-text">NO SEATS AVAILABLE</span>}
             </div>
             <div className="card-bottom-upper-right">
-              {!props.isBookmarked && <FontAwesomeIcon icon={faEdit} onClick={() => props.handleOnClickBookmark(props.id, true)} />}
-              {props.isBookmarked && <FontAwesomeIcon icon={faBookmark} onClick={() => props.handleOnClickBookmark(props.id, false)} />}
+              {!props.isBookmarked && <FontAwesomeIcon icon={faBookmarkRegular} onClick={() => props.handleOnClickBookmark(props.id, true)} />}
+              {props.isBookmarked && <FontAwesomeIcon icon={faBookmarkSolid} onClick={() => props.handleOnClickBookmark(props.id, false)} />}
               {/* <FontAwesomeIcon icon="fa-solid fa-bookmark" /> */}
               {/* <FontAwesomeIcon icon={faBookmarkRegular} /> */}
             </div>

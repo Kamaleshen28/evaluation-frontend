@@ -1,22 +1,35 @@
 .search-box {
   padding: 7px;
   border-radius: 10px;
-  height: 30px;
+  height: 20px;
+  width: 220px;
+}
+
+@media only screen and (max-width: 540px) {
+  .search-box {
+    width: 90px;
+  }
 }
 
 .search-button {
   padding: 3px;
   border-radius: 5px;
-  height: 20px;
+  height: 25px;
   cursor: pointer;
 }
 
 .body-header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 2px;
   padding: 10px;
   width: 100%;
+}
+
+@media only screen and (max-width: 400px) {
+  .body-header {
+    flex-direction: column;
+  }
 }
 
 .back-button {
@@ -26,4 +39,44 @@
 .searchbar-lens {
   display: flex;
   align-items: center;
+}
+
+.filter-text-with-icon {
+  display: flex;
+  align-items: center;
+}
+
+.filter-icon {
+  margin-right: 10px;
+  font-size: 27px;
+}
+
+.filter-text {
+  font-weight: bolder;
+  margin-right: 10px;
+}
+
+.body-header-top-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.radio-button-label {
+  font-weight: bolder;
+}
+
+.radio-button-container {
+  /* display: flex;
+  justify-content: space-between; */
+}
+
+.all-bookmark-label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.registered-seats-label {
+  display: flex;
+  justify-content: space-between;
 }

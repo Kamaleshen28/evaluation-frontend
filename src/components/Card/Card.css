@@ -1,13 +1,31 @@
 .card-wrapper {
   width: 300px;
   height: 460px;
-  background-color: blue;
+  /* background-color: blue; */
   margin-top: 20px;
   border-radius: 10px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: white;
+}
+
+
+.blue-theme {
+  background-color: blue;
+}
+
+.black-theme {
+  background-color: black;
+}
+
+.violet-theme {
+  background-color: blueviolet;
+}
+
+.gray-theme {
+  background-color: gray;
 }
 
 .card-top-section-image {

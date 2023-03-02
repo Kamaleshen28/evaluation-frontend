@@ -8,8 +8,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
   font-family: 'Poppins', sans-serif;
+  /* display: flex; */
   position: relative;
   min-height: 100vh;
+  /* min-width: 100vh; */
 }
 
 code {

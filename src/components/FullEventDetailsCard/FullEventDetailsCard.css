@@ -1,5 +1,5 @@
 .full-card-wrapper {
-  background-color: blue;
+  /* background-color: blue; */
   /* height: calc(100vh - 350px); */
   margin-top: 20px;
   border-radius: 10px;
@@ -8,6 +8,28 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 650px) {  
+  .full-card-wrapper { 
+    width: 100%;
+  }
+}
+
+.blue-theme {
+  background-color: blue;
+}
+
+.black-theme {
+  background-color: black;
+}
+
+.violet-theme {
+  background-color: blueviolet;
+}
+
+.gray-theme {
+  background-color: gray;
 }
 
 .full-card-top-section-image {
